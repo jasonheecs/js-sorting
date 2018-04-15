@@ -24,7 +24,7 @@ function generateRandomData (maxLength, minValue, maxValue) {
   return randomData;
 }
 
-function getRandomIntInclusive(min, max) {
+function getRandomIntInclusive (min, max) {
   min = Math.ceil(min);
   max = Math.floor(max);
 
@@ -47,11 +47,12 @@ export default (algoToTest) => {
     return function () {
       functionToTest(dataItem);
       expectation(dataItem);
-    }
-  }
+    };
+  };
 
   data.forEach((dataItem) => {
     it(`with [${dataItem}]`, testFunc(dataItem, algoToTest, (testItem) => {
+      /* eslint no-unused-expressions: "off" */
       expect(arrayIsSorted(testItem)).to.be.true;
     }));
   });
@@ -63,4 +64,4 @@ export default (algoToTest) => {
   it(`with empty array`, testFunc([], algoToTest, (testItem) => {
     expect(testItem).to.deep.equal([]);
   }));
-}
+};
