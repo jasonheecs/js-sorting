@@ -2,6 +2,11 @@
 
 const expect = (require('chai')).expect;
 
+/**
+ * Checks if an array is sorted
+ * @param  {Array} arr
+ * @return {boolean}
+ */
 function arrayIsSorted (arr) {
   return arr.every((el, index) => {
     if (index < arr.length - 1) {
@@ -12,8 +17,14 @@ function arrayIsSorted (arr) {
   });
 }
 
+/**
+ * Generates a set of random array data for testing
+ * @param  {number} maxLength Max array length of random data
+ * @param  {number} minValue Minimum integer value of random data
+ * @param  {number} maxValue  Maximum integer value of random data
+ * @return {Array}
+ */
 function generateRandomData (maxLength, minValue, maxValue) {
-  // generate a random integer between 1 and maxLength
   let dataLength = getRandomIntInclusive(1, maxLength);
   let randomData = [];
 
@@ -24,6 +35,12 @@ function generateRandomData (maxLength, minValue, maxValue) {
   return randomData;
 }
 
+/**
+ * Generate a random integer number between min and max (inclusive)
+ * @param  {number} min
+ * @param  {number} max
+ * @return {number}
+ */
 function getRandomIntInclusive (min, max) {
   min = Math.ceil(min);
   max = Math.floor(max);
@@ -31,6 +48,9 @@ function getRandomIntInclusive (min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
+/**
+ * @param  {Function} algoToTest Sorting algorithm to be tested
+ */
 export default (algoToTest) => {
   const data = [
     [5, 2, 1, 3, 6, 4],

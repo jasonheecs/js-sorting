@@ -2,7 +2,8 @@
     "extends": "standard",
     "rules": {
         "no-extra-semi": ["off", "always"],
-        "semi": ["error", "always"]
+        "semi": ["error", "always"],
+        "require-jsdoc": ["warn"]
     },
     "env": {
         "mocha": true
