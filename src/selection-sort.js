@@ -2,6 +2,11 @@
 
 import {swap} from './helper.js';
 
+/**
+ * @param  {Array} elements
+ * @param  {number} startIndex
+ * @return {number}
+ */
 function findSmallestElementIndex (elements, startIndex) {
   let smallestElement = elements[startIndex];
   let smallestElementIndex = startIndex;
@@ -16,6 +21,9 @@ function findSmallestElementIndex (elements, startIndex) {
   return smallestElementIndex;
 }
 
+/**
+ * @param  {Array} elements
+ */
 export default (elements) => {
   elements.forEach((el, index) => {
     let smallestElementIndex = findSmallestElementIndex(elements, index);

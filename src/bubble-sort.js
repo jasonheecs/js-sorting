@@ -2,6 +2,9 @@
 
 import {swap} from './helper.js';
 
+/**
+ * @param  {Array} elements
+ */
 export default (elements) => {
   let swapCounter = -1;
   let limit = elements.length - 1;
