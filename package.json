@@ -14,8 +14,20 @@
       "es2015"
     ]
   },
-  "author": "",
-  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jasonheecs/js-sorting.git"
+  },
+  "keywords": [
+    "sorting",
+    "algorithms"
+  ],
+  "author": "jasonheecs",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jasonheecs/js-sorting/issues"
+  },
+  "homepage": "https://github.com/jasonheecs/js-sorting#readme",
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
