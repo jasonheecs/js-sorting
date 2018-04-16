@@ -2,6 +2,7 @@
 
 /**
  * @param  {Array} elements
+ * @return {Array}
  */
 export default (elements) => {
   let valueToInsert;
@@ -20,4 +21,6 @@ export default (elements) => {
       elements[index] = valueToInsert;
     }
   }
+
+  return elements;
 };

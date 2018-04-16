@@ -23,6 +23,7 @@ function findSmallestElementIndex (elements, startIndex) {
 
 /**
  * @param  {Array} elements
+ * @return {Array}
  */
 export default (elements) => {
   elements.forEach((el, index) => {
@@ -32,4 +33,6 @@ export default (elements) => {
       swap(elements, smallestElementIndex, index);
     }
   });
+
+  return elements;
 };
