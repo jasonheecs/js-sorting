@@ -65,8 +65,7 @@ export default (algoToTest) => {
 
   const testFunc = (dataItem, functionToTest, expectation) => {
     return function () {
-      functionToTest(dataItem);
-      expectation(dataItem);
+      expectation(functionToTest(dataItem));
     };
   };
 
@@ -77,11 +76,11 @@ export default (algoToTest) => {
     }));
   });
 
-  it(`with [1]`, testFunc([1], algoToTest, (testItem) => {
+  it('with [1]', testFunc([1], algoToTest, (testItem) => {
     expect(testItem).to.deep.equal([1]);
   }));
 
-  it(`with empty array`, testFunc([], algoToTest, (testItem) => {
+  it('with empty array', testFunc([], algoToTest, (testItem) => {
     expect(testItem).to.deep.equal([]);
   }));
 };

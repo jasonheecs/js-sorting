@@ -4,6 +4,7 @@ import {swap} from './helper.js';
 
 /**
  * @param  {Array} elements
+ * @return {Array}
  */
 export default (elements) => {
   let swapCounter = -1;
@@ -21,4 +22,6 @@ export default (elements) => {
 
     limit--;
   }
+
+  return elements;
 };
