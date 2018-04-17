@@ -1,4 +1,6 @@
 # Sorting Algorithms in Javascript
+[![Build Status](https://travis-ci.org/jasonheecs/js-sorting.svg?branch=master)](https://travis-ci.org/jasonheecs/js-sorting) [![Coverage Status](https://coveralls.io/repos/github/jasonheecs/js-sorting/badge.svg)](https://coveralls.io/github/jasonheecs/js-sorting)
+
 A package containing implementations of various sorting algorithms in Javascript. This project is mainly a learning exercise and personal refresher on the common CS sorting algos, in addition to playing around with test coverage reports with [coveralls](https://coveralls.io/)
 
 ## Installation
