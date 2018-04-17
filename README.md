@@ -1,8 +1,10 @@
 # Sorting Algorithms in Javascript
-A package containing implementations of various sorting algorithms in Javascript. This project is mainly a learning exercise and personal refresher on the common CS sorting algos.
+[![Build Status](https://travis-ci.org/jasonheecs/js-sorting.svg?branch=master)](https://travis-ci.org/jasonheecs/js-sorting) [![Coverage Status](https://coveralls.io/repos/github/jasonheecs/js-sorting/badge.svg)](https://coveralls.io/github/jasonheecs/js-sorting)
+
+A package containing implementations of various sorting algorithms in Javascript. This project is mainly a learning exercise and personal refresher on the common CS sorting algos, in addition to playing around with test coverage reports with [coveralls](https://coveralls.io/)
 
 ## Installation
-`npm install @username/project-name --save`
+`npm install @jasonheecs/js-sorting --save`
 
 ## Usage
 ```js
@@ -22,7 +24,10 @@ A package containing implementations of various sorting algorithms in Javascript
 ```
 
 ## Running unit tests
-`npm run test`
+`npm test`
+
+To run a specific test file, you can use an extra `--` to pass the filename through:
+`npm test -- test/bubble-sort-test.js`
 
 ## License
 MIT
