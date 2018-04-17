@@ -26,7 +26,7 @@ A package containing implementations of various sorting algorithms in Javascript
 ## Running unit tests
 `npm test`
 
-To run a specific test file, you can use an extra `--` to pass the filename through:
+To run a specific test file, you can use an extra `--` to pass the filename through:  
 `npm test -- test/bubble-sort-test.js`
 
 ## License
