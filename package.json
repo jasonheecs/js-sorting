@@ -1,11 +1,11 @@
 {
   "name": "@jasonheecs/js-sorting",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A list of common sorting algorithms implemented in Javascript",
   "main": "lib/index.js",
   "scripts": {
     "lint": "eslint src/*.js test/*.js",
-    "prepublish": "./node_modules/babel-cli/bin/babel.js src --out-dir lib",
+    "prepare": "./node_modules/babel-cli/bin/babel.js src --out-dir lib",
     "precommit": "npm run lint",
     "test": "nyc --reporter=html --reporter=text mocha --require babel-core/register",
     "coverage": "nyc report --reporter=text-lcov | coveralls"
