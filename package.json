@@ -7,8 +7,8 @@
     "lint": "eslint src/*.js test/*.js",
     "prepublish": "./node_modules/babel-cli/bin/babel.js src --out-dir lib",
     "precommit": "npm run lint",
-    "test": "mocha --require babel-core/register",
-    "cover": "babel-istanbul cover node_modules/mocha/bin/_mocha -- --require babel-core/register --colors --reporter dot test/"
+    "test": "nyc --reporter=html --reporter=text mocha --require babel-core/register",
+    "coverage": "nyc report --reporter=text-lcov | coveralls"
   },
   "babel": {
     "presets": [
@@ -44,6 +44,7 @@
     "eslint-plugin-standard": "^3.0.1",
     "husky": "^0.14.3",
     "mocha": "^5.1.0",
+    "nyc": "^11.6.0",
     "sinon": "^4.5.0"
   }
 }
