@@ -6,7 +6,7 @@ import {swap} from './helper.js';
  * @param  {Array} elements
  * @return {Array}
  */
-export default (elements) => {
+export default function bubbleSort (elements) {
   let done = false;
   let limit = elements.length - 1;
 

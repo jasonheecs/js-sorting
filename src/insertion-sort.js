@@ -4,7 +4,7 @@
  * @param  {Array} elements
  * @return {Array}
  */
-export default (elements) => {
+export default function insertionSort (elements) {
   let valueToInsert;
   let index;
 

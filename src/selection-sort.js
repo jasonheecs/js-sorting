@@ -25,7 +25,7 @@ function findSmallestElementIndex (elements, startIndex) {
  * @param  {Array} elements
  * @return {Array}
  */
-export default (elements) => {
+export default function selectionSort (elements) {
   elements.forEach((el, index) => {
     let smallestElementIndex = findSmallestElementIndex(elements, index);
 
