@@ -21,7 +21,13 @@
   },
   "keywords": [
     "sorting",
-    "algorithms"
+    "algorithms",
+    "sort",
+    "bubble sort",
+    "insertion sort",
+    "merge sort",
+    "quicksort",
+    "selection sort"
   ],
   "author": "jasonheecs",
   "license": "MIT",
