@@ -8,13 +8,7 @@ const expect = (require('chai')).expect;
  * @return {boolean}
  */
 function arrayIsSorted (arr) {
-  return arr.every((el, index) => {
-    if (index < arr.length - 1) {
-      return (el <= arr[index + 1]);
-    } else {
-      return true;
-    }
-  });
+  return arr.every((el, index) => el <= arr[index + 1] || index >= arr.length - 1);
 }
 
 /**
@@ -82,5 +76,21 @@ export default (algoToTest) => {
 
   it('with empty array', testFunc([], algoToTest, (testItem) => {
     expect(testItem).to.deep.equal([]);
+  }));
+
+  it('with already sorted array', testFunc([1, 2, 3, 4, 5], algoToTest, (testItem) => {
+    expect(arrayIsSorted(testItem)).to.be.true;
+  }));
+
+  it('with sorted array in reverse order', testFunc([5, 4, 3, 2, 1], algoToTest, (testItem) => {
+    expect(arrayIsSorted(testItem)).to.be.true;
+  }));
+
+  it('with negative values', testFunc([-5, 2, -3, 1, 0], algoToTest, (testItem) => {
+    expect(arrayIsSorted(testItem)).to.be.true;
+  }));
+
+  it('with repeated values', testFunc([1, 1, 1, 1, 1], algoToTest, (testItem) => {
+    expect(arrayIsSorted(testItem)).to.be.true;
   }));
 };
