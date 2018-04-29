@@ -11,13 +11,12 @@ function merge (left, right) {
   let j = 0;
 
   while (i < left.length || j < right.length) {
-    if (i < left.length && j < right.length) {
-      if (left[i] < right[j]) {
-        mergedArr.push(left[i++]);
-      } else {
+    if (i < left.length) {
+      if (j < right.length && right[j] < left[i]) {
         mergedArr.push(right[j++]);
+        continue;
       }
-    } else if (i < left.length) {
+
       mergedArr.push(left[i++]);
     } else {
       mergedArr.push(right[j++]);
