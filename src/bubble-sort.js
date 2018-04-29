@@ -7,16 +7,16 @@ import {swap} from './helper.js';
  * @return {Array}
  */
 export default (elements) => {
-  let swapCounter = -1;
+  let done = false;
   let limit = elements.length - 1;
 
-  while (swapCounter !== 0) {
-    swapCounter = 0;
+  while (!done) {
+    done = true;
 
     for (let i = 0; i < limit; i++) {
       if (elements[i] > elements[i + 1]) {
         swap(elements, i, i + 1);
-        swapCounter++;
+        done = false;
       }
     }
 
