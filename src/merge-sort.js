@@ -6,7 +6,7 @@
  * @return {Array}
  */
 function merge (left, right) {
-  let mergedArr = [];
+  const mergedArr = [];
   let i = 0;
   let j = 0;
 
@@ -31,13 +31,13 @@ function merge (left, right) {
  * @return {Array}
  */
 export default function mergeSort (elements) {
-  let length = elements.length;
+  const length = elements.length;
 
   if (length < 2) {
     return elements;
   }
 
-  let halfLength = Math.floor(length / 2);
+  const halfLength = Math.floor(length / 2);
 
   return merge(mergeSort(elements.slice(0, halfLength)), mergeSort(elements.slice(halfLength, length)));
 };

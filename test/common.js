@@ -19,8 +19,8 @@ function arrayIsSorted (arr) {
  * @return {Array}
  */
 function generateRandomData (maxLength, minValue, maxValue) {
-  let dataLength = getRandomIntInclusive(1, maxLength);
-  let randomData = [];
+  const dataLength = getRandomIntInclusive(1, maxLength);
+  const randomData = [];
 
   for (let i = 0; i < dataLength; i++) {
     randomData.push(getRandomIntInclusive(minValue, maxValue));

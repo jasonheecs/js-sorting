@@ -1,6 +1,6 @@
 'use strict';
 
-import {swap} from './helper.js';
+import { swap } from './helper.js';
 
 /**
  * @param  {Array} elements
@@ -27,7 +27,7 @@ function findSmallestElementIndex (elements, startIndex) {
  */
 export default function selectionSort (elements) {
   elements.forEach((el, index) => {
-    let smallestElementIndex = findSmallestElementIndex(elements, index);
+    const smallestElementIndex = findSmallestElementIndex(elements, index);
 
     if (smallestElementIndex !== index) {
       swap(elements, smallestElementIndex, index);
