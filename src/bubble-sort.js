@@ -1,6 +1,6 @@
 'use strict';
 
-import {swap} from './helper.js';
+import { swap } from './helper.js';
 
 /**
  * @param  {Array} elements

@@ -1,6 +1,6 @@
 'use strict';
 
-import {swap} from './helper.js';
+import { swap } from './helper.js';
 
 /**
  * @param  {Array} elements
@@ -9,7 +9,7 @@ import {swap} from './helper.js';
  * @return {Array}
  */
 function partition (elements, left, right) {
-  let pivot = elements[right];
+  const pivot = elements[right];
   let partitionIndex = left;
 
   for (let i = left; i < right; i++) {
@@ -31,7 +31,7 @@ function partition (elements, left, right) {
  */
 export default function quickSort (elements, left = 0, right = (elements.length - 1)) {
   if (elements.length > 1 && left < right) {
-    let partitionIndex = partition(elements, left, right);
+    const partitionIndex = partition(elements, left, right);
 
     quickSort(elements, left, partitionIndex - 1);
     quickSort(elements, partitionIndex + 1, right);
