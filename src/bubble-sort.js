@@ -1,27 +1,29 @@
 'use strict';
 
-import { swap } from './helper.js';
-
 /**
- * @param  {Array} elements
- * @return {Array}
+ * @param  {Array} arr
  */
-export default function bubbleSort (elements) {
-  let done = false;
-  let limit = elements.length - 1;
+export default function (arr) {
+  let isSorted = true;
 
-  while (!done) {
-    done = true;
-
-    for (let i = 0; i < limit; i++) {
-      if (elements[i] > elements[i + 1]) {
-        swap(elements, i, i + 1);
-        done = false;
+  for (let i = 0; i < arr.length; i++) {
+    for (let j = 1; j < arr.length - i; j++) {
+      if (arr[j - 1] > arr[j]) {
+        swap(j - 1, j);
+        isSorted = false;
       }
     }
 
-    limit--;
+    if (isSorted) return arr;
   }
 
-  return elements;
-};
+  return arr;
+
+  /**
+   * @param  {number} i
+   * @param  {number} j
+   */
+  function swap (i, j) {
+    [arr[i], arr[j]] = [arr[j], arr[i]];
+  }
+}
