@@ -1,38 +1,30 @@
 'use strict';
 
-import { swap } from './helper.js';
-
 /**
- * @param  {Array} elements
- * @param  {number} startIndex
- * @return {number}
+ * @param  {Array} arr
  */
-function findSmallestElementIndex (elements, startIndex) {
-  let smallestElement = elements[startIndex];
-  let smallestElementIndex = startIndex;
+export default function (arr) {
+  for (let i = 0; i < arr.length - 1; i++) {
+    let minIndex = i;
 
-  for (let i = startIndex + 1; i < elements.length; i++) {
-    if (elements[i] < smallestElement) {
-      smallestElement = elements[i];
-      smallestElementIndex = i;
+    for (let j = i + 1; j < arr.length; j++) {
+      if (arr[j] < arr[minIndex]) {
+        minIndex = j;
+      }
+    }
+
+    if (minIndex !== i) {
+      swap(minIndex, i);
     }
   }
 
-  return smallestElementIndex;
+  return arr;
+
+  /**
+   * @param  {number} i
+   * @param  {number} j
+   */
+  function swap (i, j) {
+    [arr[i], arr[j]] = [arr[j], arr[i]];
+  }
 }
-
-/**
- * @param  {Array} elements
- * @return {Array}
- */
-export default function selectionSort (elements) {
-  elements.forEach((el, index) => {
-    const smallestElementIndex = findSmallestElementIndex(elements, index);
-
-    if (smallestElementIndex !== index) {
-      swap(elements, smallestElementIndex, index);
-    }
-  });
-
-  return elements;
-};
