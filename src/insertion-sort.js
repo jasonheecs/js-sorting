@@ -1,26 +1,21 @@
 'use strict';
 
 /**
- * @param  {Array} elements
+ * @param  {Array} arr
  * @return {Array}
  */
-export default function insertionSort (elements) {
-  let valueToInsert;
-  let index;
+export default function (arr) {
+  for (let i = 1; i < arr.length; i++) {
+    const current = arr[i];
+    let j = i - 1;
 
-  for (let i = 1; i <= elements.length; i++) {
-    valueToInsert = elements[i];
-    index = i;
-
-    while (index > 0 && elements[index - 1] > valueToInsert) {
-      elements[index] = elements[index - 1];
-      index--;
+    while (j >= 0 && arr[j] > current) {
+      arr[j + 1] = arr[j];
+      j--;
     }
 
-    if (index !== i) {
-      elements[index] = valueToInsert;
-    }
+    arr[j + 1] = current;
   }
 
-  return elements;
+  return arr;
 };
