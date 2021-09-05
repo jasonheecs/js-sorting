@@ -1,41 +1,49 @@
-'use strict';
-
-import { swap } from './helper.js';
-
 /**
  * @param  {Array} elements
- * @param  {number} left
- * @param  {number} right
  * @return {Array}
  */
-function partition (elements, left, right) {
-  const pivot = elements[right];
-  let partitionIndex = left;
-
-  for (let i = left; i < right; i++) {
-    if (elements[i] < pivot) {
-      swap(elements, i, partitionIndex++);
-    }
-  }
-
-  swap(elements, right, partitionIndex);
-
-  return partitionIndex;
-}
-
-/**
- * @param  {Array} elements
- * @param  {number} left
- * @param  {number} right
- * @return {Array}
- */
-export default function quickSort (elements, left = 0, right = (elements.length - 1)) {
-  if (elements.length > 1 && left < right) {
-    const partitionIndex = partition(elements, left, right);
-
-    quickSort(elements, left, partitionIndex - 1);
-    quickSort(elements, partitionIndex + 1, right);
-  }
+export default function (elements) {
+  qsort(0, elements.length - 1);
 
   return elements;
-};
+
+  /**
+ * @param  {number} start
+ * @return {number} end
+ */
+  function qsort (start, end) {
+    if (start >= end) return;
+
+    const pivot = elements[end];
+    let left = start;
+    let right = end - 1;
+
+    while (left <= right) {
+      while (left <= end && elements[left] < pivot) {
+        left++;
+      }
+
+      while (right >= start && elements[right] > pivot) {
+        right--;
+      }
+
+      if (left >= right) break;
+
+      swap(left, right);
+      left++;
+      right--;
+    }
+
+    swap(end, left);
+    qsort(start, left - 1);
+    qsort(left + 1, end);
+  }
+
+  /**
+   * @param  {number} i
+   * @param  {number} j
+   */
+  function swap (i, j) {
+    [elements[i], elements[j]] = [elements[j], elements[i]];
+  }
+}
