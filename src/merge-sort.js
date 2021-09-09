@@ -1,43 +1,44 @@
 'use strict';
 
 /**
- * @param  {Array} left
- * @param  {Array} right
- * @return {Array}
- */
-function merge (left, right) {
-  const mergedArr = [];
-  let i = 0;
-  let j = 0;
-
-  while (i < left.length || j < right.length) {
-    if (i < left.length) {
-      if (j < right.length && right[j] < left[i]) {
-        mergedArr.push(right[j++]);
-        continue;
-      }
-
-      mergedArr.push(left[i++]);
-    } else {
-      mergedArr.push(right[j++]);
-    }
-  }
-
-  return mergedArr;
-}
-
-/**
  * @param  {Array} elements
  * @return {Array}
  */
 export default function mergeSort (elements) {
-  const length = elements.length;
+  if (elements.length < 2) return elements;
 
-  if (length < 2) {
-    return elements;
+  const mid = Math.floor(elements.length / 2);
+  const arrayOne = elements.slice(0, mid);
+  const arrayTwo = elements.slice(mid, elements.length);
+
+  return merge(mergeSort(arrayOne), mergeSort(arrayTwo));
+}
+
+/**
+ * @param  {Array} arrayOne
+ * @param  {Array} arrayTwo
+ * @return {Array}
+ */
+function merge (arrayOne, arrayTwo) {
+  const mergedArr = [];
+  let i = 0;
+  let j = 0;
+
+  while (i < arrayOne.length && j < arrayTwo.length) {
+    if (arrayOne[i] < arrayTwo[j]) {
+      mergedArr.push(arrayOne[i++]);
+    } else {
+      mergedArr.push(arrayTwo[j++]);
+    }
   }
 
-  const halfLength = Math.floor(length / 2);
+  while (i < arrayOne.length) {
+    mergedArr.push(arrayOne[i++]);
+  }
 
-  return merge(mergeSort(elements.slice(0, halfLength)), mergeSort(elements.slice(halfLength, length)));
-};
+  while (j < arrayTwo.length) {
+    mergedArr.push(arrayTwo[j++]);
+  }
+
+  return mergedArr;
+}
