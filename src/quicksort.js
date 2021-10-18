@@ -19,7 +19,7 @@ export default function (elements) {
     let right = end - 1;
 
     while (left <= right) {
-      while (left <= end && elements[left] < pivot) {
+      while (left <= (end - 1) && elements[left] < pivot) {
         left++;
       }
 
